@@ -10,7 +10,9 @@ const Header = () => {
         <Link to="#">Location</Link>
         <Link to="#">Careers</Link>
       </ul>
-      <button className="ml-auto mr-2">sign in / join</button>
+      <button className="ml-auto mr-2 text-white uppercase">
+        sign in / join
+      </button>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
