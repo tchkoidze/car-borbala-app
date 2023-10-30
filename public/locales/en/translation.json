@@ -1,0 +1,34 @@
+{
+  "headers": "Wellcome",
+  "header": {
+    "menu": {
+      "about": "About",
+      "location": "Location",
+      "careers": "Careers"
+    }
+  },
+  "hero": "Start your trip with us",
+  "home": {
+    "city": {
+      "header": "The most popular cities for car hire in Europe",
+      "1": "Tbilisi",
+      "2": "Berlin",
+      "3": "Brussels",
+      "4": "Paris"
+    }
+  },
+  "details": {
+    "discounts": {
+      "discount": "Discounts and benefit",
+      "info": "Became a privilege member"
+    },
+    "time": {
+      "period": "Daily, weekly or monthly",
+      "info": "Rent a car as long as you need"
+    },
+    "checkins": {
+      "checkin": "Online check-in",
+      "info": "Get on the road as fast as bossible with online Check-in"
+    }
+  }
+}
