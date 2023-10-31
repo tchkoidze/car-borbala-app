@@ -3,38 +3,57 @@ import { Link } from "react-router-dom";
 
 import React, { Suspense } from "react";
 import { useTranslation } from "react-i18next";
+import Language from "../components/language";
 
 const Header = (props: {
   setShowMenu: (bool: boolean) => void;
   showMenu: boolean;
 }) => {
   const { t, i18n } = useTranslation();
+  console.log("language is: ", i18n.language);
 
   const change = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    i18n.changeLanguage(event.target.value);
+    const newLanguage = event.target.value;
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem("selectedLanguage", newLanguage);
     console.log(event.target.value);
+    console.log(i18n.language);
+    //console.log(45);
   };
 
   return (
     <header className="w-full flex items-center bg-green-950 bg-gradient-to-b from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.3)] px-6">
       <Logo />
       <ul className="hidden md:flex gap-2 ml-6 text-white">
-        <Link to="#" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+        <Link to="/about" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
           {t("header.menu.about")}
         </Link>
         <Link to="#" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
           {t("header.menu.location")}
         </Link>
-        <Link to="#" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+        <Link
+          id="careers-link"
+          to="career"
+          className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]"
+        >
           {t("header.menu.careers")}
         </Link>
       </ul>
-      <select name="language" id="languge" onChange={change}>
+      {/*<select
+        name="language"
+        id="languge"
+        value={i18n.language}
+        onChange={change}
+      >
         <option value="en">Eng</option>
         <option value="geo">Geo</option>
-      </select>
+      </select>*/}
+      <div className="hidden md:block ml-2">
+        <Language />
+      </div>
+
       <button className="ml-auto mr-2 text-white uppercase hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
-        sign in / join
+        <Link to={"/login"}>sign in / join</Link>
       </button>
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Close from "../svg/Close";
+import Language from "./language";
 
 function Menu(props: { setShowMenu: (bool: boolean) => void }) {
   return (
@@ -7,7 +8,7 @@ function Menu(props: { setShowMenu: (bool: boolean) => void }) {
       <Close onClick={() => props.setShowMenu(false)} />
       <ul className=" flex flex-col gap-5 mt-2">
         <li>
-          <Link to={"/"} className="text-blue-950">
+          <Link to={"/about"} className="text-blue-950">
             About
           </Link>
         </li>
@@ -20,6 +21,9 @@ function Menu(props: { setShowMenu: (bool: boolean) => void }) {
           <Link to={"/"} className="text-blue-950">
             Careers
           </Link>
+        </li>
+        <li>
+          <Language />
         </li>
       </ul>
     </div>

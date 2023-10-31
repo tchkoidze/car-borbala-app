@@ -1,7 +1,7 @@
 import prius from "../assets/images/Prius.png";
 import fit from "../assets/images/Honda-Fit.png";
 import priusC from "../assets/images/toyota-prius-c.png";
-import cClass from "../assets/images/benz-c-class.png";
+import cclass from "../assets/images/benz-c-class.png";
 import hrv from "../assets/images/Honda-HR-V.png";
 import prado from "../assets/images/Land-Cruiser-Prado.png";
 import landRover from "../assets/images/land-roverland.png";
@@ -52,10 +52,10 @@ const Vehicle = () => {
         </div>
       </div>
       <div className="md:flex md:justify-between items-center  md:w-[100%] border-b border-b-slate-200 py-5">
-        <img src={cClass} alt="" className="max-w-xs " />
+        <img src={cclass} alt="" className="max-w-xs " />
         <div className="flex justify-between md:flex-col md:gap-12">
           <div>
-            <h3>Mersedes Benz c-class</h3>
+            <h3>Mersedes Benz c-className</h3>
             <p>Automatic 4.0l, CDW</p>
           </div>
 
