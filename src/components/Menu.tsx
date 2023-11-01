@@ -1,25 +1,32 @@
 import { Link } from "react-router-dom";
 import Close from "../svg/Close";
 import Language from "./language";
+import { useTranslation } from "react-i18next";
 
 function Menu(props: { setShowMenu: (bool: boolean) => void }) {
+  const { t } = useTranslation();
   return (
     <div className="bg-white absolute right-0 p-6">
       <Close onClick={() => props.setShowMenu(false)} />
       <ul className=" flex flex-col gap-5 mt-2">
         <li>
+          <Link to={"/home"} className="text-blue-950">
+            {t("header.menu.home")}
+          </Link>
+        </li>
+        <li>
           <Link to={"/about"} className="text-blue-950">
-            About
+            {t("header.menu.about")}
           </Link>
         </li>
         <li>
           <Link to={"/"} className="text-blue-950">
-            Location
+            {t("header.menu.location")}
           </Link>
         </li>
         <li>
-          <Link to={"/"} className="text-blue-950">
-            Careers
+          <Link to={"/career"} className="text-blue-950">
+            {t("header.menu.careers")}
           </Link>
         </li>
         <li>

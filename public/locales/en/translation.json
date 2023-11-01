@@ -2,6 +2,7 @@
   "headers": "Wellcome",
   "header": {
     "menu": {
+      "home": "Home",
       "about": "About",
       "location": "Location",
       "careers": "Careers"

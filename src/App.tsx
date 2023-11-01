@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Header from "./layouts/Header";
 import Home from "./pages/Home";
 import Footer from "./layouts/Footer";
@@ -28,7 +28,8 @@ function App() {
       )}
       {showMenu ? <Menu setShowMenu={setShowMenu} /> : null}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/career" element={<Career />} />
         <Route path="/login" element={<Login />} />

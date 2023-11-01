@@ -1,21 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import signupSchema from "../schema/signupSchema";
 
 const Signup = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(signupSchema) });
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<{
+    email: string;
+    password: string;
+    repeatPassword: string;
+  }> = async (data) => {
+    console.log(data);
+    console.log(5);
+    navigate("/login");
+  };
+
   return (
-    <div className="w-full max-w-xs">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="h-screen flex items-center justify-center">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs"
+      >
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="username"
+            htmlFor="email"
           >
             Email
           </label>
           <input
+            {...register("email")}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
+            id="email"
             type="text"
-            placeholder="Username"
+            placeholder="email"
           />
         </div>
         <div className="mb-6">
@@ -26,31 +50,30 @@ const Signup = () => {
             Password
           </label>
           <input
+            {...register("password")}
             className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
-            placeholder="******************"
+            placeholder="password"
           />
         </div>
         <div className="mb-6">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="password"
+            htmlFor="repeatPassword"
           >
             Repeat password
           </label>
           <input
+            {...register("repeatPassword")}
             className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
+            id="repeatPassword"
             type="password"
-            placeholder="******************"
+            placeholder="repeatPassword"
           />
         </div>
         <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Sign up
           </button>
         </div>
