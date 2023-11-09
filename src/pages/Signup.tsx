@@ -17,7 +17,7 @@ const Signup = () => {
     repeatPassword: string;
   }> = async (data) => {
     console.log(data);
-    console.log(5);
+    console.log(errors);
     navigate("/login");
   };
 

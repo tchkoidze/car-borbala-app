@@ -5,8 +5,8 @@ import Footer from "./layouts/Footer";
 import { useState } from "react";
 import Menu from "./components/Menu";
 
-import React, { Suspense } from "react";
-import { useTranslation } from "react-i18next";
+import { Suspense } from "react";
+//import { useTranslation } from "react-i18next";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";

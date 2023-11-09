@@ -28,7 +28,10 @@ const Home = () => {
     pickupDate: Date;
     returnDate: Date;
   }> = async (data) => {
+    ///////////// gasarkvevia aq datasa ra vuqna
     console.log(data);
+    console.log(errors);
+
     setHide(!hide);
   };
 

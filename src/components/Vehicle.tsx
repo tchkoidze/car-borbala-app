@@ -1,5 +1,5 @@
 import prius from "../assets/images/Prius.png";
-import fit from "../assets/images/Honda-Fit.png";
+
 import priusC from "../assets/images/toyota-prius-c.png";
 import cclass from "../assets/images/benz-c-class.png";
 import hrv from "../assets/images/Honda-HR-V.png";

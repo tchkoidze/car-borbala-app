@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import team from "../assets/images/team.jpg";
 import staf from "../assets/images/staf.jpg";
 
 const Career = () => {

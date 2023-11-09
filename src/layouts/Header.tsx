@@ -1,7 +1,6 @@
 import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
 
-import React, { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import Language from "../components/language";
 
@@ -12,14 +11,14 @@ const Header = (props: {
   const { t, i18n } = useTranslation();
   console.log("language is: ", i18n.language);
 
-  const change = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  /*const change = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = event.target.value;
     i18n.changeLanguage(newLanguage);
     localStorage.setItem("selectedLanguage", newLanguage);
     console.log(event.target.value);
     console.log(i18n.language);
     //console.log(45);
-  };
+  };*/
 
   return (
     <header className="w-full flex items-center bg-green-950 bg-gradient-to-b from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.3)] px-6">
