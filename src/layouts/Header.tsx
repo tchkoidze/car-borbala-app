@@ -24,13 +24,24 @@ const Header = (props: {
     <header className="w-full flex items-center bg-green-950 bg-gradient-to-b from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.3)] px-6">
       <Logo />
       <ul className="hidden md:flex gap-2 ml-6 text-white">
-        <Link to="/home" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+        <Link
+          to="/home"
+          id="home"
+          className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]"
+        >
           {t("header.menu.home")}
         </Link>
-        <Link to="/about" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+        <Link
+          to="/about"
+          id="about"
+          className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]"
+        >
           {t("header.menu.about")}
         </Link>
-        <Link to="#" className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+        <Link
+          to="/location"
+          className="hover:shadow-[0_2px_0_0_rgb(255,255,255)]"
+        >
           {t("header.menu.location")}
         </Link>
         <Link

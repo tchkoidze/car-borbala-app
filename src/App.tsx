@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Career from "./pages/Careers";
+import LocationPage from "./pages/Location";
 
 function App() {
   //onst { t, i18n } = useTranslation();
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/About" element={<About />} />
+        <Route path="/location" element={<LocationPage />} />
         <Route path="/career" element={<Career />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
