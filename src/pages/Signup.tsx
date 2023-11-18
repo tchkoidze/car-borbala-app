@@ -18,6 +18,15 @@ const Signup = () => {
   }> = async (data) => {
     console.log(data);
     console.log(errors);
+    // Save form values to local storage
+    //localStorage.setItem("signupFormData", JSON.stringify(data));
+
+    const dataWithSigned = { ...data, signed: true };
+
+    console.log(dataWithSigned);
+
+    // Save form values to local storage
+    localStorage.setItem("signupFormData", JSON.stringify(dataWithSigned));
     navigate("/login");
   };
 

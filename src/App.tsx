@@ -12,29 +12,41 @@ import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Career from "./pages/Careers";
 import LocationPage from "./pages/Location";
+import Popup from "./components/Popup";
 
 function App() {
   //onst { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [showPopup, setShowPopup] = useState<boolean>(false);
 
   const location = useLocation();
   const hideHeaderRoutes = ["/login", "/signup"];
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
+  const [signed, setSigned] = useState(false);
 
   return (
     <main>
       {/*<Header setShowMenu={setShowMenu} showMenu={showMenu} />*/}
       {shouldShowHeader && (
-        <Header setShowMenu={setShowMenu} showMenu={showMenu} />
+        <Header
+          setShowMenu={setShowMenu}
+          showMenu={showMenu}
+          signed={signed}
+          setShowPopup={setShowPopup}
+        />
       )}
       {showMenu ? <Menu setShowMenu={setShowMenu} /> : null}
+      {showPopup ? (
+        <Popup setShowPopup={setShowPopup} setSigned={setSigned} />
+      ) : null}
+
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/career" element={<Career />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setSigned={setSigned} />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
       {shouldShowHeader && <Footer />}

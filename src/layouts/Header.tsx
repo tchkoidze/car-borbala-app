@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import Language from "../components/language";
+import avatar from "../assets/images/avatar.svg";
 
 const Header = (props: {
   setShowMenu: (bool: boolean) => void;
   showMenu: boolean;
+  signed: boolean;
+  setShowPopup: (value: boolean) => void;
 }) => {
   const { t, i18n } = useTranslation();
   console.log("language is: ", i18n.language);
-
+  console.log(props.signed);
   /*const change = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = event.target.value;
     i18n.changeLanguage(newLanguage);
@@ -65,9 +68,18 @@ const Header = (props: {
         <Language />
       </div>
 
-      <button className="ml-auto mr-2 text-white uppercase hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
-        <Link to={"/login"}>sign in / join</Link>
-      </button>
+      {props.signed ? (
+        <img
+          src={avatar}
+          alt="avatar"
+          onClick={() => props.setShowPopup(true)}
+          className="w-8 h-8 ml-auto"
+        />
+      ) : (
+        <button className="ml-auto mr-2 text-white uppercase hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+          <Link to={"/login"}>sign in / join</Link>
+        </button>
+      )}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -84,3 +96,13 @@ const Header = (props: {
 };
 
 export default Header;
+
+/*
+<button className="ml-auto mr-2 text-white uppercase hover:shadow-[0_2px_0_0_rgb(255,255,255)]">
+        {props.signed ? (
+          <img src={avatar} alt="avatar" className="w-8 h-8" />
+        ) : (
+          <Link to={"/login"}>sign in / join</Link>
+        )}
+      </button>
+*/

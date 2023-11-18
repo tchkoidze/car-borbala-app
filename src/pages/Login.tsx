@@ -3,7 +3,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import loginSchema from "../schema/loginSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-const Login = () => {
+const Login: React.FC<{ setSigned: (signed: boolean) => void }> = ({
+  setSigned,
+}) => {
   const {
     register,
     handleSubmit,
@@ -18,7 +20,28 @@ const Login = () => {
   }> = async (data) => {
     console.log(data);
     console.log(45);
-    navigate("/home");
+    // Retrieve stored signup data from local storage
+    const storedSignupDataString = localStorage.getItem("signupFormData");
+    if (storedSignupDataString) {
+      const storedSignupData = JSON.parse(storedSignupDataString);
+
+      // Compare login data with stored signup data
+      if (
+        data.email === storedSignupData.email &&
+        data.password === storedSignupData.password
+      ) {
+        console.log("Login successful!");
+        setSigned(true);
+        navigate("/home"); // Move to the "/home" route on successful login
+      } else {
+        console.log("Invalid login credentials");
+        // Handle invalid login credentials (e.g., show an error message)
+      }
+    } else {
+      console.log("No signup data found");
+      // Handle the case where no signup data is found in local storage
+    }
+    //navigate("/home");
   };
 
   return (

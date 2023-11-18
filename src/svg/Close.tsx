@@ -4,7 +4,7 @@ function Close(props: { onClick: () => void }) {
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="21"
-      className="ml-auto"
+      //className="ml-auto"
       onClick={props.onClick}
     >
       <g fill="#D0D6F9" fillRule="evenodd">
