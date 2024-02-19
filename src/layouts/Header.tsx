@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Language from "../components/language";
 import avatar from "../assets/images/avatar.svg";
+import AddtoCart from "../svg/AddtoCart";
 
 const Header = (props: {
   setShowMenu: (bool: boolean) => void;
@@ -64,7 +65,9 @@ const Header = (props: {
         <option value="en">Eng</option>
         <option value="geo">Geo</option>
       </select>*/}
-      <div className="hidden md:block ml-2">
+
+      <div className="hidden md:flex gap-2 ml-2">
+        <AddtoCart />
         <Language />
       </div>
 
