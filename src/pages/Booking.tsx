@@ -49,22 +49,22 @@ const Booking = () => {
       </div>
       <div>
         <h3 className="font-bold text-2xl">Your details</h3>
-        <form>
+        <form className="flex flex-col">
           <input
             placeholder="Full name"
             type="text"
-            className="w-full bg-slate-50 focus:bg-white outline-none border rounded px-3 py-2 border-[border-gray] bg-bg-gray"
+            className="w-full bg-slate-50 focus:bg-white outline-none border rounded px-3 py-2 border-[border-gray] bg-bg-gray my-2"
           />
           <input
             type="email"
             placeholder="Email"
-            className="w-full bg-slate-50 focus:bg-white outline-none border rounded px-3 py-2 border-[border-gray] bg-bg-gray"
+            className="w-full bg-slate-50 focus:bg-white outline-none border rounded px-3 py-2 border-[border-gray] bg-bg-gray my-2"
           />
           <input
             type="number"
             placeholder="Phone number"
             inputMode="decimal"
-            className="w-full bg-slate-50 focus:bg-white outline-none border rounded px-3 py-2 border-[border-gray] bg-bg-gray"
+            className="w-full bg-slate-50 focus:bg-white outline-none border rounded px-3 py-2 border-[border-gray] bg-bg-gray my-2"
           />
         </form>
       </div>
