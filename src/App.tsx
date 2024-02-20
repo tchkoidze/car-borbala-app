@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Career from "./pages/Careers";
 import LocationPage from "./pages/Location";
 import Popup from "./components/Popup";
+import Booking from "./pages/Booking";
 
 function App() {
   //onst { t, i18n } = useTranslation();
@@ -55,6 +56,7 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/booking" element={<Booking />} />
       </Routes>
       {shouldShowHeader && <Footer />}
     </main>
