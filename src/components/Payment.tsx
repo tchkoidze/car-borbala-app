@@ -2,7 +2,7 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const initialOptions = {
   "client-id":
-    "AXq00rESyVuTpqSbmgSG6X8ekkIsBGsblsNUbUguz4xyXfURh8z0O0LPv22SZ6T-Yh6YrMIkJP-njnxG",
+    "AdelPwHWz-JSLxN-mEsK0u-Ip7gEVRzFcl4WQyT4w64RglZU2qLy-np580Cv8wRtM7AVGBAGdTulcy_B",
   currency: "USD",
   intent: "capture",
 };
@@ -10,7 +10,7 @@ const initialOptions = {
 const Pay = () => {
   return (
     <PayPalScriptProvider options={initialOptions}>
-      <Checkout />
+      {/*<Checkout />*/}
     </PayPalScriptProvider>
   );
 };
