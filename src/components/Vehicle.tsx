@@ -14,8 +14,19 @@ const Vehicle = () => {
         <div key={car.id}>
           <img src={car.img} alt={car.model} />
           <div>
-            <h3>{car.model}</h3>
-            <p>{car.type}</p>
+            <div>
+              <h3>{car.model}</h3>
+              <p>{car.type}</p>
+            </div>
+            <div>
+              <p>Pay at Desk</p>
+              <p>{car.price}</p>
+            </div>
+          </div>
+          <div className="flex items-center my-5">
+            <button className="mx-auto bg-[#FCB72B] px-4 py-1 rounded-3xl border hover:border-[#FCB72B] hover:bg-white">
+              Select
+            </button>
           </div>
         </div>
       ))}
