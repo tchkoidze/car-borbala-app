@@ -1,3 +1,5 @@
+import Pay from "../components/Payment";
+
 const Booking = () => {
   return (
     <div className="mx-6 my-3">
@@ -68,6 +70,7 @@ const Booking = () => {
           />
         </form>
       </div>
+      <Pay />
     </div>
   );
 };

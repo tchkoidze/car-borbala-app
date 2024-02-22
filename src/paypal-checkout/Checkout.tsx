@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Checkout.css";
+//import "./Checkout.css";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 
 const Checkout = () => {
