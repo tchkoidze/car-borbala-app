@@ -5,10 +5,20 @@ import cclass from "../assets/images/benz-c-class.png";
 import hrv from "../assets/images/Honda-HR-V.png";
 import prado from "../assets/images/Land-Cruiser-Prado.png";
 import landRover from "../assets/images/land-roverland.png";
+import data from "../carData.json";
 
 const Vehicle = () => {
   return (
     <div className="flex flex-col items-center px-6 md:items-start">
+      {data.map((car) => (
+        <div key={car.id}>
+          <img src={car.img} alt={car.model} />
+          <div>
+            <h3>{car.model}</h3>
+            <p>{car.type}</p>
+          </div>
+        </div>
+      ))}
       <div className="md:flex md:justify-between items-center  md:w-[100%] border-b border-b-slate-200">
         <img src={prius} alt="" className="max-w-xs " />
         <div className="flex justify-between md:flex-col md:gap-12">

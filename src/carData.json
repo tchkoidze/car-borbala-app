@@ -3,36 +3,42 @@
     "id": 1,
     "model": "Toyota Prius",
     "type": "Automatic 4.0l, CDW",
-    "price": "$ 22/ day"
+    "price": "$ 22/ day",
+    "img": "./images/Prius.png"
   },
   {
     "id": 2,
     "model": "Toyota Prius C",
     "type": "Automatic 1.8l, TPL",
-    "price": "$ 25/ day"
+    "price": "$ 25/ day",
+    "img": "./images/toyota-prius-c.png"
   },
   {
     "id": 3,
     "model": "Mersedes Benz c-class",
     "type": "Automatic 4.0l, CDW",
-    "price": "$ 50/ day"
+    "price": "$ 50/ day",
+    "img": "./images/benz-c-class.png"
   },
   {
     "id": 4,
     "model": "Honda HR-V",
     "type": "Automatic 4.0l, CDW",
-    "price": "$ 39/ day"
+    "price": "$ 39/ day",
+    "img": "./images/Honda-HR-V.png"
   },
   {
     "id": 5,
     "model": "Toyota Prado",
     "type": "Automatic 5.0l, CDW",
-    "price": "$ 59/ day"
+    "price": "$ 59/ day",
+    "img": "./images/Land-Cruiser-Prado.png"
   },
   {
     "id": 6,
     "model": "Landrover Sport",
     "type": "Automatic 5.0l, CDW",
-    "price": "$ 79/ day"
+    "price": "$ 79/ day",
+    "img": "./images/land-roverland.png"
   }
 ]
