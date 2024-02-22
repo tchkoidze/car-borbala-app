@@ -1,13 +1,17 @@
-import prius from "../assets/images/Prius.png";
-
-import priusC from "../assets/images/toyota-prius-c.png";
-import cclass from "../assets/images/benz-c-class.png";
-import hrv from "../assets/images/Honda-HR-V.png";
-import prado from "../assets/images/Land-Cruiser-Prado.png";
-import landRover from "../assets/images/land-roverland.png";
 import data from "../carData.json";
+interface CarType {
+  id: number;
+  img: string;
+  model: string;
+  type: string;
+  price: string;
+}
 
-const Vehicle = () => {
+interface VehicleProps {
+  setSelectCar: (car: CarType) => void;
+}
+
+const Vehicle: React.FC<VehicleProps> = ({ setSelectCar }) => {
   return (
     <div className="flex flex-col items-center px-6 md:items-start">
       {data.map((car) => (
@@ -27,7 +31,10 @@ const Vehicle = () => {
             </div>
           </div>
           <div className="flex items-center my-5">
-            <button className="mx-auto bg-[#FCB72B] px-4 py-1 rounded-3xl border hover:border-[#FCB72B] hover:bg-white">
+            <button
+              onClick={() => setSelectCar(car)}
+              className="mx-auto bg-[#FCB72B] px-4 py-1 rounded-3xl border hover:border-[#FCB72B] hover:bg-white"
+            >
               Select
             </button>
           </div>
