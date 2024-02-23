@@ -10,12 +10,23 @@ interface CarType {
 
 interface BookingProps {
   selectCar: CarType | undefined;
+  setShowBooking: (show: boolean) => void;
 }
 
-const Booking: React.FC<BookingProps> = ({ selectCar }) => {
+const Booking: React.FC<BookingProps> = ({ selectCar, setShowBooking }) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    // Stop event propagation to prevent it from reaching parent elements
+    e.stopPropagation();
+  };
   return (
-    <div className="fixed overflow-auto z-[1000]  top-0 left-0 right-0 bottom-0  bg-[#333E50]/[0.9] no-scrollbar">
-      <div className="  w-[50%] my-3 mx-auto py-3 px-6 bg-white  ">
+    <div
+      onClick={() => setShowBooking(false)}
+      className="fixed overflow-auto z-[1000]  top-0 left-0 right-0 bottom-0  bg-[#333E50]/[0.9] "
+    >
+      <div
+        onClick={handleClick}
+        className="  w-[50%] my-3 mx-auto py-3 px-6 bg-white  "
+      >
         <div>
           <p>{selectCar?.model}</p>
           <h3 className="font-bold text-2xl">Pick up</h3>

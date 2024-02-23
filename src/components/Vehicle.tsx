@@ -9,9 +9,10 @@ interface CarType {
 
 interface VehicleProps {
   setSelectCar: (car: CarType) => void;
+  setShowBooking: (show: boolean) => void;
 }
 
-const Vehicle: React.FC<VehicleProps> = ({ setSelectCar }) => {
+const Vehicle: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
   return (
     <div className="flex flex-col items-center px-6 md:items-start">
       {data.map((car) => (
@@ -32,7 +33,10 @@ const Vehicle: React.FC<VehicleProps> = ({ setSelectCar }) => {
           </div>
           <div className="flex items-center my-5">
             <button
-              onClick={() => setSelectCar(car)}
+              onClick={() => {
+                setSelectCar(car);
+                setShowBooking(true);
+              }}
               className="mx-auto bg-[#FCB72B] px-4 py-1 rounded-3xl border hover:border-[#FCB72B] hover:bg-white"
             >
               Select

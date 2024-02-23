@@ -27,6 +27,7 @@ function App() {
   //onst { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [showBooking, setShowBooking] = useState(false);
 
   const [selectCar, setSelectCar] = useState<CarType | undefined>();
 
@@ -44,7 +45,9 @@ function App() {
 
   return (
     <main>
-      <Booking selectCar={selectCar} />
+      {showBooking && (
+        <Booking selectCar={selectCar} setShowBooking={setShowBooking} />
+      )}
       {/*<Header setShowMenu={setShowMenu} showMenu={showMenu} />*/}
       {shouldShowHeader && (
         <Header
@@ -61,7 +64,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home setSelectCar={setSelectCar} />} />
+        <Route
+          path="/home"
+          element={
+            <Home setSelectCar={setSelectCar} setShowBooking={setShowBooking} />
+          }
+        />
         <Route path="/About" element={<About />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/career" element={<Career />} />

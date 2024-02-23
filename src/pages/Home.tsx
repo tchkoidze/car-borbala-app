@@ -19,9 +19,10 @@ interface CarType {
   price: string;
 }
 interface VehicleProps {
+  setShowBooking: (show: boolean) => void;
   setSelectCar: (car: CarType) => void;
 }
-const Home: React.FC<VehicleProps> = ({ setSelectCar }) => {
+const Home: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
   const { t } = useTranslation();
   //const [selectCar, setSelectCar] = useState<CarType | undefined>();
 
@@ -100,7 +101,9 @@ const Home: React.FC<VehicleProps> = ({ setSelectCar }) => {
         </div>
       </div>
 
-      {hide ? <Vehicle setSelectCar={setSelectCar} /> : null}
+      {hide ? (
+        <Vehicle setSelectCar={setSelectCar} setShowBooking={setShowBooking} />
+      ) : null}
       <div className="px-4 my-14">
         <h2 className="text-black font-[barlow] font-bold text-3xl leading-tight mb-9">
           {t("home.city.header")}
