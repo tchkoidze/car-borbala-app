@@ -1,8 +1,9 @@
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Checkout from "../paypal-checkout/Checkout";
 
 const initialOptions = {
-  "client-id":
-    "AXq00rESyVuTpqSbmgSG6X8ekkIsBGsblsNUbUguz4xyXfURh8z0O0LPv22SZ6T-Yh6YrMIkJP-njnxG",
+  clientId:
+    "AdelPwHWz-JSLxN-mEsK0u-Ip7gEVRzFcl4WQyT4w64RglZU2qLy-np580Cv8wRtM7AVGBAGdTulcy_B",
   currency: "USD",
   intent: "capture",
 };
@@ -14,3 +15,4 @@ const Pay = () => {
     </PayPalScriptProvider>
   );
 };
+export default Pay;

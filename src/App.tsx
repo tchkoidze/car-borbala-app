@@ -15,10 +15,21 @@ import LocationPage from "./pages/Location";
 import Popup from "./components/Popup";
 import Booking from "./pages/Booking";
 
+interface CarType {
+  id: number;
+  img: string;
+  model: string;
+  type: string;
+  price: string;
+}
+
 function App() {
   //onst { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [showBooking, setShowBooking] = useState(false);
+
+  const [selectCar, setSelectCar] = useState<CarType | undefined>();
 
   const location = useLocation();
   const hideHeaderRoutes = ["/login", "/signup"];
@@ -34,6 +45,9 @@ function App() {
 
   return (
     <main>
+      {showBooking && (
+        <Booking selectCar={selectCar} setShowBooking={setShowBooking} />
+      )}
       {/*<Header setShowMenu={setShowMenu} showMenu={showMenu} />*/}
       {shouldShowHeader && (
         <Header
@@ -50,13 +64,18 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/home"
+          element={
+            <Home setSelectCar={setSelectCar} setShowBooking={setShowBooking} />
+          }
+        />
         <Route path="/About" element={<About />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/career" element={<Career />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/booking" element={<Booking />} />
+        {/*<Route path="/booking" element={<Booking />} />*/}
       </Routes>
       {shouldShowHeader && <Footer />}
     </main>

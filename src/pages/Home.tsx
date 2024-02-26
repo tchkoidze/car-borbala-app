@@ -11,8 +11,20 @@ import { useState } from "react";
 
 import { useTranslation } from "react-i18next";
 
-const Home = () => {
+interface CarType {
+  id: number;
+  img: string;
+  model: string;
+  type: string;
+  price: string;
+}
+interface VehicleProps {
+  setShowBooking: (show: boolean) => void;
+  setSelectCar: (car: CarType) => void;
+}
+const Home: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
   const { t } = useTranslation();
+  //const [selectCar, setSelectCar] = useState<CarType | undefined>();
 
   const {
     register,
@@ -89,7 +101,9 @@ const Home = () => {
         </div>
       </div>
 
-      {hide ? <Vehicle /> : null}
+      {hide ? (
+        <Vehicle setSelectCar={setSelectCar} setShowBooking={setShowBooking} />
+      ) : null}
       <div className="px-4 my-14">
         <h2 className="text-black font-[barlow] font-bold text-3xl leading-tight mb-9">
           {t("home.city.header")}
