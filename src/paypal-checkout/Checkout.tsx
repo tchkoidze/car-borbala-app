@@ -18,7 +18,7 @@ const Checkout = () => {
     });
   };
 
-  const onCreateOrder = (data: any, actions: any) => {
+  const onCreateOrder = (actions: any) => {
     return actions.order.create({
       purchase_units: [
         {
@@ -30,7 +30,7 @@ const Checkout = () => {
     });
   };
 
-  const onApproveOrder = (data: any, actions: any) => {
+  const onApproveOrder = (actions: any) => {
     return actions.order.capture().then((details: any) => {
       const name = details.payer.name.given_name;
       alert(`Transaction completed by ${name}`);
@@ -49,8 +49,8 @@ const Checkout = () => {
           </select>
           <PayPalButtons
             style={{ layout: "vertical" }}
-            createOrder={(data, actions) => onCreateOrder(data, actions)}
-            onApprove={(data, actions) => onApproveOrder(data, actions)}
+            createOrder={(actions) => onCreateOrder(actions)}
+            onApprove={(actions) => onApproveOrder(actions)}
           />
         </>
       )}

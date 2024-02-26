@@ -2,7 +2,7 @@ import { useState } from "react";
 import Pay from "../components/Payment";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import loginSchema from "../schema/loginSchema";
+
 import bookingSchema from "../schema/bookingSchema";
 
 interface CarType {
