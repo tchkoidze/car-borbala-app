@@ -30,9 +30,9 @@ function Menu(props: { setShowMenu: (bool: boolean) => void }) {
             {t("header.menu.careers")}
           </Link>
         </li>
-        <li>
+        {/*<li>
           <AddtoCart />
-        </li>
+  </li>*/}
         <li>
           <Language />
         </li>
