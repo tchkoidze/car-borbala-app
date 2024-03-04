@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import staf from "../assets/images/staf.jpg";
+import { useEffect } from "react";
 
 const Career = () => {
+  useEffect(() => {
+    document.title = "Carborbala: career";
+  }, []);
   return (
     <div className="flex flex-col items-center justify-center  mx-6 my-16">
       <div className="flex flex-col items-center gap-10 md:flex-row">

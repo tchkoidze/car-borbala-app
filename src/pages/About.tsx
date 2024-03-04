@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const About = () => {
+  useEffect(() => {
+    document.title = "Carborbala: about";
+  }, []);
   return (
     <div className="flex flex-col justify-center h-[100vh] mx-6">
       <h1 className="font-[roboto] font-black text-3xl mt-4 mb-8">
