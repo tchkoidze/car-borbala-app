@@ -7,9 +7,11 @@ import searchSchema from "../schema/search-schema";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Vehicle from "../components/Vehicle";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 
 import { useTranslation } from "react-i18next";
+
+const LazyImg = lazy(() => import("../components/LennyImage"));
 
 interface CarType {
   id: number;
@@ -110,25 +112,37 @@ const Home: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
         </h2>
         <div className="flex flex-col gap-5 items-center md:flex-row md:flex-wrap justify-center">
           <div className="bg-gray-200 rounded overflow-x-hidden max-w-[343px]">
-            <img src={tbilisi} alt="tbilisi" className="w-[343px] h-[229px]" />
+            {/*<img src={tbilisi} alt="tbilisi" className="w-[343px] h-[229px]" />*/}
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyImg src={tbilisi} alt="tbilisi" />
+            </Suspense>
             <p className="mt-10 p-4 text-black font-[barlow] font-bold text-2xl leading-tight">
               {t("home.city.1")}
             </p>
           </div>
           <div className="bg-gray-200 rounded overflow-x-hidden max-w-[343px]">
-            <img src={berlin} alt="tbilisi" />
+            {/*<img src={berlin} alt="tbilisi" />*/}
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyImg src={berlin} alt="berlin" />
+            </Suspense>
             <p className="mt-10 p-4 text-black font-[barlow] font-bold text-2xl leading-tight">
               {t("home.city.2")}
             </p>
           </div>
           <div className="bg-gray-200 rounded overflow-x-hidden max-w-[343px]">
-            <img src={brussels} alt="tbilisi" />
+            {/*<img src={brussels} alt="tbilisi" />*/}
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyImg src={brussels} alt="brussels" />
+            </Suspense>
             <p className="mt-10 p-4 text-black font-[barlow] font-bold text-2xl leading-tight">
               {t("home.city.3")}
             </p>
           </div>
           <div className="bg-gray-200 rounded overflow-x-hidden max-w-[343px]">
-            <img src={paris} alt="tbilisi" />
+            {/*<img src={paris} alt="tbilisi" />*/}
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyImg src={paris} alt="paris" />
+            </Suspense>
             <p className="mt-10 p-4 text-black font-[barlow] font-bold text-2xl leading-tight">
               {t("home.city.4")}
             </p>
