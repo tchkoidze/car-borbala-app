@@ -10,6 +10,7 @@ import Vehicle from "../components/Vehicle";
 import { Suspense, lazy, useState } from "react";
 
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 const LazyImg = lazy(() => import("../components/LennyImage"));
 
@@ -49,8 +50,33 @@ const Home: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
     setHide(!hide);
   };
 
+  const ogData = {
+    title: "Carborbala:rental cars",
+    description: "Rental cars",
+    url: "https://car-borbala.vercel.app/",
+    image: "https://www.yourwebsite.com/og-image.jpg",
+    siteName: "Carborbala",
+  };
+
   return (
     <main>
+      <Helmet>
+        <meta property="og:title" content={ogData.title} />
+        <meta property="og:description" content={ogData.description} />
+        <meta property="og:url" content={ogData.url} />
+        <meta property="og:image" content={ogData.image} />
+        <meta property="og:site_name" content={ogData.siteName} />
+
+        <meta name="twitter:title" content={ogData.title} />
+        <meta name="twitter:description" content={ogData.description} />
+        <meta name="twitter:image" content={ogData.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          name="description"
+          content="Beginner friendly page for learning React Helmet."
+        />
+      </Helmet>
       <div className="bg-green-950 ">
         <div className="w-full  home-hero-mobile pb-5 lg:h-screen">
           <h1 className="font-[roboto] font-black text-3xl md:text-4xl text-white text-opacity-50 px-4 pt-16">

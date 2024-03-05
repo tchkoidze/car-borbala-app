@@ -14,6 +14,7 @@ import Career from "./pages/Careers";
 import LocationPage from "./pages/Location";
 import Popup from "./components/Popup";
 import Booking from "./pages/Booking";
+import { HelmetProvider } from "react-helmet-async";
 
 interface CarType {
   id: number;
@@ -43,42 +44,49 @@ function App() {
   });
   console.log("signed: ", signed);
 
-  return (
-    <main>
-      {showBooking && (
-        <Booking selectCar={selectCar} setShowBooking={setShowBooking} />
-      )}
-      {/*<Header setShowMenu={setShowMenu} showMenu={showMenu} />*/}
-      {shouldShowHeader && (
-        <Header
-          setShowMenu={setShowMenu}
-          showMenu={showMenu}
-          signed={signed}
-          setShowPopup={setShowPopup}
-        />
-      )}
-      {showMenu ? <Menu setShowMenu={setShowMenu} /> : null}
-      {showPopup ? (
-        <Popup setShowPopup={setShowPopup} setSigned={setSigned} />
-      ) : null}
+  const helmetContext = {};
 
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route
-          path="/home"
-          element={
-            <Home setSelectCar={setSelectCar} setShowBooking={setShowBooking} />
-          }
-        />
-        <Route path="/About" element={<About />} />
-        <Route path="/location" element={<LocationPage />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        {/*<Route path="/booking" element={<Booking />} />*/}
-      </Routes>
-      {shouldShowHeader && <Footer />}
-    </main>
+  return (
+    <HelmetProvider context={helmetContext}>
+      <main>
+        {showBooking && (
+          <Booking selectCar={selectCar} setShowBooking={setShowBooking} />
+        )}
+        {/*<Header setShowMenu={setShowMenu} showMenu={showMenu} />*/}
+        {shouldShowHeader && (
+          <Header
+            setShowMenu={setShowMenu}
+            showMenu={showMenu}
+            signed={signed}
+            setShowPopup={setShowPopup}
+          />
+        )}
+        {showMenu ? <Menu setShowMenu={setShowMenu} /> : null}
+        {showPopup ? (
+          <Popup setShowPopup={setShowPopup} setSigned={setSigned} />
+        ) : null}
+
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route
+            path="/home"
+            element={
+              <Home
+                setSelectCar={setSelectCar}
+                setShowBooking={setShowBooking}
+              />
+            }
+          />
+          <Route path="/About" element={<About />} />
+          <Route path="/location" element={<LocationPage />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          {/*<Route path="/booking" element={<Booking />} />*/}
+        </Routes>
+        {shouldShowHeader && <Footer />}
+      </main>
+    </HelmetProvider>
   );
 }
 
