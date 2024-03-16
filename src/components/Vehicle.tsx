@@ -26,7 +26,7 @@ const Vehicle: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
 
   return (
     <div className="flex flex-col items-center px-6 md:items-start">
-      {/*data.map((car) => (
+      {data.map((car) => (
         <div
           key={car.id}
           className="md:flex md:justify-between items-center  md:w-[100%] border-b border-b-slate-200"
@@ -54,8 +54,8 @@ const Vehicle: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
             </button>
           </div>
         </div>
-            ))*/}
-      {returnedData?.map((car) => (
+      ))}
+      {/*returnedData?.map((car) => (
         <div
           key={car.id}
           className="md:flex md:justify-between items-center  md:w-[100%] border-b border-b-slate-200"
@@ -87,7 +87,7 @@ const Vehicle: React.FC<VehicleProps> = ({ setSelectCar, setShowBooking }) => {
             </button>
           </div>
         </div>
-      ))}
+            ))*/}
     </div>
   );
 };
