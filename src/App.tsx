@@ -15,6 +15,7 @@ import LocationPage from "./pages/Location";
 import Popup from "./components/Popup";
 import Booking from "./pages/Booking";
 import { HelmetProvider } from "react-helmet-async";
+import Verify from "./pages/Verify";
 
 interface CarType {
   id: number;
@@ -82,6 +83,7 @@ function App() {
           <Route path="/career" element={<Career />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/verify" element={<Verify />} />
           {/*<Route path="/booking" element={<Booking />} />*/}
         </Routes>
         {shouldShowHeader && <Footer />}
