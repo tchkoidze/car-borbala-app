@@ -34,7 +34,7 @@ function App() {
   const [selectCar, setSelectCar] = useState<CarType | undefined>();
 
   const location = useLocation();
-  const hideHeaderRoutes = ["/login", "/signup"];
+  const hideHeaderRoutes = ["/login", "/signup", "/verify"];
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
   const [signed, setSigned] = useState<boolean>(false);
 
