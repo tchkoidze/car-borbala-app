@@ -25,10 +25,10 @@ export default function Verify() {
     verify();
   });
   return (
-    <div>
+    <div className="h-screen flex flex-col items-center justify-center ">
       <p>Your eccount verified</p>
 
-      <button>
+      <button className="px-5 py-2 rounded-xl bg-[#FCB72B] hover:border-[#FCB72B] border hover:bg-white">
         <Link to="/login">
           <p>Log In</p>
         </Link>
